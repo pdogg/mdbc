@@ -65,7 +65,22 @@ def toLetter(aLetter):
         else:
                 return aLetter
 
+#encodes placing a space between characters
+#needed to do pollux right
+def encodewithbreaks(plaintext):
+        out = ""
+        temp = 0
+        plaintext = plaintext.lower()
+        for i in range(len(plaintext)):
+                if plaintext[i] in key:
+                        out += key[plaintext[i]]
+                        out += " "
+                else:
+                        if plaintext[i] != " ":
+                             out += plaintext[i]
+        return out
 
+                
 def showTable():
 	x = 0
 	for i in sorted(key.iterkeys()):
